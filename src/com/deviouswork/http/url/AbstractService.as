@@ -59,6 +59,8 @@ package com.deviouswork.http.url {
 		public function set key(key : String):void {	key_str = key; }
 		protected var key_str : String;
 		
+		public function AbstractService() {}
+		
 		public function shorten(url : String) : void { return; }
 		
 	}

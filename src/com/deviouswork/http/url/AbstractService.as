@@ -48,15 +48,15 @@ package com.deviouswork.http.url {
 		protected var api_str : String;
 		
 		public function get version() : String {	return version_str; }
-		public function set version(aInput_str : String):void {	version_str = aInput_str; }
+		public function set version(version : String):void {	version_str = version; }
 		protected var version_str : String;
 		
 		public function get login() : String {	return login_str; }
-		public function set login(aInput_str : String):void {	login_str = aInput_str; }
+		public function set login(login : String):void {	login_str = login; }
 		protected var login_str : String;
 		
 		public function get key() : String {	return key_str; }
-		public function set key(aInput_str : String):void {	key_str = aInput_str; }
+		public function set key(key : String):void {	key_str = key; }
 		protected var key_str : String;
 		
 		public function shorten(url : String) : void { return; }

@@ -2,7 +2,7 @@
  * com.deviouswork.http.url.BitlyService
  * @version 1.0.0
  * @author Joakim Roos  - http://www.deviouswork.com
- * WOAACampaignSite - Copyright � 2009 Deviouswork. All Rights Reserved.
+ * Copyright � 2009 Deviouswork. All Rights Reserved.
  * 
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation

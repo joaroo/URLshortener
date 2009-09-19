@@ -34,22 +34,22 @@ package com.deviouswork.http.url {
 	[Event(name="complete", type="flash.events.Event")]
 	public class URLShortener extends EventDispatcher {
 		
-		public function get shortURL():String { return _short_service.shortURL; }
+		public function get shortURL():String { return service.shortURL; }
 		
 		public function get service():AbstractService { return _short_service; }
 		private var _short_service : AbstractService;
 		
-		public function URLShortener(Service:Class) {
-			_short_service = new Service() as AbstractService;
+		public function URLShortener(serviceClass:Class) {
+			_short_service = new serviceClass() as AbstractService;
 		}
-		
+
 		public function shorten(url:String):void {
-			_addListeners(_short_service);
-			_short_service.shorten(url);
+			_addListeners(service);
+			service.shorten(url);
 		}
 
 		private function _addListeners(dispatcher : IEventDispatcher) : void {
-            dispatcher.addEventListener(Event.COMPLETE, _onComplete, false, 0, true);  
+            dispatcher.addEventListener(Event.COMPLETE, _onComplete, false, 0, true);
         }
 		
 		private function _removeListeners(dispatcher : IEventDispatcher) : void {
@@ -57,8 +57,8 @@ package com.deviouswork.http.url {
 		} 
 			
 		private function _onComplete(event:Event):void {
-			_short_service.shortURL = (event.target as URLLoader).data as String; 
-			_removeListeners(_short_service);
+			service.shortURL = (event.target as URLLoader).data as String;
+			_removeListeners(service);
 			dispatchEvent(new Event(Event.COMPLETE));
 		}		  
 	}
